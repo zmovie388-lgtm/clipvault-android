@@ -1,0 +1,38 @@
+plugins { id 'com.android.application' }
+
+def vCode = (System.getenv("VERSION_CODE") ?: "1").toInteger()
+def vName = System.getenv("VERSION_NAME") ?: "1.0.0"
+
+android {
+    namespace 'com.clipvault.app'
+    compileSdk 34
+    defaultConfig {
+        applicationId "com.clipvault.app"
+        minSdk 24
+        targetSdk 34
+        versionCode vCode
+        versionName vName
+    }
+    signingConfigs {
+        release {
+            def ks = System.getenv("KEYSTORE_FILE")
+            if (ks) {
+                storeFile file(ks)
+                storePassword System.getenv("KEYSTORE_PASSWORD")
+                keyAlias System.getenv("KEY_ALIAS")
+                keyPassword System.getenv("KEY_PASSWORD")
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig System.getenv("KEYSTORE_FILE") ? signingConfigs.release : signingConfigs.debug
+        }
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+}
+
+dependencies {
+    implementation 'androidx.core:core:1.13.1'
+}
