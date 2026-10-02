@@ -6,7 +6,7 @@ TikTok (no watermark), YouTube & Facebook video downloader — as a native Andro
 
 ### **[Download ClipVault.apk](https://github.com/zmovie388-lgtm/clipvault-android/releases/latest/download/ClipVault.apk)**
 
-or browse all versions on the [Releases page](https://github.com/zmovie388-lgtm/clipvault-android/releases).
+Download page: **https://clipvault-apk.vercel.app** · or browse all versions on the [Releases page](https://github.com/zmovie388-lgtm/clipvault-android/releases).
 
 **Install:** open the downloaded `ClipVault.apk` → if Android asks, allow *Install unknown apps* for your browser / file manager → Install. Requires Android 7.0+.
 
